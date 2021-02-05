@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const {connect} = require('./db/model')
 const mongoose = require('mongoose');
 const indexRouter = require("./routes/index");
+const path = require('path');
 const app = express();
 
 const PORT = 3000;
@@ -13,19 +14,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(process.env.PWD, 'public')));
 
-app.listen(PORT, () => {
-  console.log('Server start');
-  connect(
-    'mongodb://localhost:27017/fleashCard',
-    {Î
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    },
-    () => {
-      console.log('base start');
-    },
-    );
-  });
+
+
+app.listen(PORT)
 
 
   app.use ("/", indexRouter);
