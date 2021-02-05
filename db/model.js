@@ -6,20 +6,11 @@ const userSchema = new Schema({
   name: String,
   login: String,
   password: String,
-  // score: Number,
 })
 
-// const themeSchema = new Schema({
-//   theme: String,
-//   questions: [{
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'question'
-//   }]
-// })
 
 const questionSchema = new Schema({
   question: String,
-  // price: Number,
   answer1: String,
   answer2: String,
   answer3: String,
