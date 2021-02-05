@@ -10,7 +10,6 @@ async function main() {
   );
 
   const questions = [];
-  const users = [];
 
   const question1 = new Question({
     question: "На какой планете самый короткий день?",
@@ -169,7 +168,6 @@ async function main() {
   );
 
   await Question.insertMany(questions);
-  await User.insertMany(users);
 }
 
 main();
