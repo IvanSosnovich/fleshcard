@@ -3,17 +3,15 @@ const app = require('../server')
 const router = express.Router()
 const User = require('../db/model')
 
-
 router.get('/', (req, res) => {
   res.render('login')
 })
 
-router.post('/', (req, res) => {
-  const { login, password } = req.body
-  const user = User.create({
-    username: login,
-    password
-  })
+router.post('/',async  (req, res) => {
+  const user = new User({name:req.body.name, login:req.body.login, password:req.body.password})
+  // await user.save();
+  console.log(req.body)
+  res.redirect('index')
 })
 // router.post('/', async (req, res) => {
 //   const { login, email, password1 } = req.body;
