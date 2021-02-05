@@ -1,6 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 const {connect} = require('./db/model')
+const mongoose = require('mongoose');
+const indexRouter = require("./routes/index");
 const app = express();
 
 const PORT = 3000;
@@ -22,5 +24,8 @@ app.listen(PORT, () => {
     () => {
       console.log('base start');
     },
-  );
-});
+    );
+  });
+
+
+  app.use ("/", indexRouter);
